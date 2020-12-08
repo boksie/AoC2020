@@ -8,7 +8,7 @@ namespace AoC2020
     {
         static void Main(string[] args)
         {
-            var result = new ResultFour();
+            var result = new ResultFive();
         }
 
         public static void Print(string result)
