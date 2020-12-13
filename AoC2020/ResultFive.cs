@@ -31,12 +31,25 @@ namespace AoC2020
         {
             Point row = new Point() { Lowest = 0, Highest = 127 };
             Point column = new Point { Lowest = 0, Highest = 7 };
+
+            var row2 = 0;
+            var str = line.Substring(0, 7);
+
+            for (int i = 0; i < 7; i++)
+            {
+                if (str[i] == 'B')
+                {
+                    row2 += (int)Math.Pow(2, 7 - i) / 2;
+                }
+            }
+
             foreach (var chr in line)
             {
                 // upper
                 if (chr == 'B')
                 {
                     row.Upper();
+                    
                 }
                 // lower
                 else if (chr == 'F')
