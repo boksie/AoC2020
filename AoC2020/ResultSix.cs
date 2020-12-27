@@ -15,13 +15,13 @@ namespace AoC2020
             StreamReader reader = new StreamReader("./input6.txt");
             var text = reader.ReadToEnd().Replace("\r", "").Split("\n\n");
             var result1 = text.ToList().Select(l => l.Replace("\n", "").Distinct().Count());
-            var chars = text.ToList().Select(l => l.Split("\n"));
+            var lines = text.ToList().Select(l => l.Split("\n"));
 
             var result2 = 0;
-            foreach (var item in chars)
+            foreach (var line in lines)
             {
-                var first = item.First().ToCharArray();
-                foreach (var row in item.Skip(1))
+                var first = line.First().ToCharArray();
+                foreach (var row in line.Skip(1))
                 {
                     first = first.Intersect(row.ToCharArray()).ToArray();
                 }
